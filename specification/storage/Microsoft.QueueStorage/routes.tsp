@@ -106,7 +106,7 @@ op StorageOperationNoBody<
   ...ClientRequestIdHeader;
 }) | TError;
 
-@client
+@client({name: "QueueServiceClient"})
 interface Service {
   /** Sets properties for a storage account's Queue service endpoint, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules */
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Existing API"
@@ -183,7 +183,7 @@ interface Service {
   >;
 }
 
-@client
+@client({name: "QueueClient"})
 interface Queue {
   /** Creates a new queue under the specified account. If the queue with the same name already exists, the operation fails. */
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Existing API"
